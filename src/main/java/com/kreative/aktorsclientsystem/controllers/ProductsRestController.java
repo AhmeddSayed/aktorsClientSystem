@@ -5,12 +5,12 @@
  */
 package com.kreative.aktorsclientsystem.controllers;
 
-import com.kreative.aktorsclientsystem.repositories.ClientRepository;
+import com.kreative.aktorsclientsystem.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.kreative.aktorsclientsystem.models.Client;
+import com.kreative.aktorsclientsystem.models.Product;
 import java.util.Collection;
 import java.util.List;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,31 +25,31 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Ahmed
  */
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/products")
 @ComponentScan(basePackages = {"com.kreative.aktorsclientsystem.models"})
-public class ClientsRestController {
+public class ProductsRestController {
 
     @Autowired
-    private ClientRepository clientRepository;
+    private ProductRepository productRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<Collection<Client>> getAllClients() {
-        return new ResponseEntity<>((Collection<Client>) clientRepository.findAll(), HttpStatus.OK);
+    public ResponseEntity<Collection<Product>> getAllProducts() {
+        return new ResponseEntity<>((Collection<Product>) productRepository.findAll(), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public ResponseEntity<Client> getClientWithId(@PathVariable Long id) {
-        return new ResponseEntity<>(clientRepository.findOne(id), HttpStatus.OK);
+    public ResponseEntity<Product> getProductWithId(@PathVariable Long id) {
+        return new ResponseEntity<>(productRepository.findOne(id), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.GET, params = {"lastName"})
-    public ResponseEntity<List<Client>> findClientWithName(@RequestParam(value = "lastName") String clientName) {
-        return new ResponseEntity<>(clientRepository.findByLastName(clientName), HttpStatus.OK);
+    @RequestMapping(method = RequestMethod.GET, params = {"name"})
+    public ResponseEntity<List<Product>> findProductWithName(@RequestParam(value = "name") String productName) {
+        return new ResponseEntity<>(productRepository.findByName(productName), HttpStatus.OK);
 
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> addClient(@RequestBody Client input) {
-        return new ResponseEntity<>(clientRepository.save(input), HttpStatus.CREATED);
+    public ResponseEntity<?> addProduct(@RequestBody Product input) {
+        return new ResponseEntity<>(productRepository.save(input), HttpStatus.CREATED);
     }
 }

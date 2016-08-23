@@ -5,7 +5,7 @@
  */
 package com.kreative.aktorsclientsystem.repositories;
 
-import com.kreative.aktorsclientsystem.models.Client;
+import com.kreative.aktorsclientsystem.models.Product;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,8 @@ import org.springframework.stereotype.Repository;
  * @author Ahmed
  */
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    List<Client> findByLastName(String name);
+    List<Product> findByName(String name);
+
 }
