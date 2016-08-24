@@ -5,22 +5,17 @@
  */
 package com.kreative.aktorsclientsystem.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
  * @author Ahmed
  */
-@Controller
-
-public class HomeController {
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String showHomepage(Model model) {
-        return "index";
-    }
-
+@RestController
+@RequestMapping("/orders")
+@ComponentScan(basePackages = {"com.kreative.aktorsclientsystem.models"})
+public class OrdersController {
+    
 }

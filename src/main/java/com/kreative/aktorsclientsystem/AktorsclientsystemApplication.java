@@ -1,14 +1,12 @@
 package com.kreative.aktorsclientsystem;
 
 import com.github.javafaker.Faker;
-import com.kreative.aktorsclientsystem.helpers.DBPopulator;
 import com.kreative.aktorsclientsystem.models.Client;
 import com.kreative.aktorsclientsystem.models.Product;
 import com.kreative.aktorsclientsystem.repositories.ClientRepository;
 import com.kreative.aktorsclientsystem.repositories.ProductRepository;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.PostConstruct;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -39,8 +37,6 @@ public class AktorsclientsystemApplication {
                 clientRepository.save(aClient);
             }
 
-            System.err.println("=================================================== " + clientRepository.count());
-
         };
 
     }
@@ -56,7 +52,6 @@ public class AktorsclientsystemApplication {
                 productRepository.save(aProduct);
             }
 
-            System.err.println("=================================================== " + productRepository.count());
         };
     }
 }

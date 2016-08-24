@@ -5,17 +5,23 @@ package com.kreative.aktorsclientsystem.models;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Ahmed
  */
+@Entity
 public class Order {
 
     // Order parameters
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private final int orderId;
     private final int productId;
     private final int clientId;
