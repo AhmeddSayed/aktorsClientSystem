@@ -1,0 +1,46 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.container{
+    position: fixed;
+    margin: 10%;
+    width: 80%;
+    height: 70%;
+}
+
+#subtitle, #button-left, #button-right{
+
+}
+
+#button-left{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+    left: 50%;
+    top: 35%;
+    float: left;
+}
+
+#button-right{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+    right: 50%;
+    top: 35%;
+    float: left;
+}
+
+#subtitle{
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    height: 150px;
+    width: 150px;
+    font-size: -webkit-xxx-large;
+    top:30%;
+}
