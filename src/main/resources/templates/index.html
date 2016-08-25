@@ -1,19 +1,20 @@
 <!doctype html>
-<html>
+<html ng-app="aktors">
     <head>
         <title>Aktors Application</title>
         <link href="css/angular-bootstrap.css" rel="stylesheet"></link>
+        <script src="js/angular-bootstrap.js" type="text/javascript"></script>
+
     </head>
 
-    <body ng-app="main">
-        <div class="container">
-            <div id ="body" ng-controller="home" ng-cloak="" class="ng-cloak">
-                <div id="subtitle">Hello!</div>
-                <button id="button-left">Sign-in</button> 
-                <button id="button-right">Sign-up</button> 
-            </div>
+    <a href="#/home">Home</a>
+    <a href="#/clients">Clients</a>
+    <a href="#/products">Products</a>
+
+    <body>
+        <div ng-view="" class="container">
+
         </div>
-        <script src="js/angular-bootstrap.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
     </body>
 
